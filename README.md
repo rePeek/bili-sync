@@ -7,6 +7,15 @@
 
 bili-sync 是一款专为 NAS 用户编写的哔哩哔哩同步工具，由 Rust & Tokio 驱动。
 
+## Nix
+
+本仓库提供可复现的源码构建：先构建 WebUI，再将其嵌入 Rust 二进制。
+
+```bash
+nix build
+nix run
+```
+
 ## 效果演示
 
 ### 管理页
