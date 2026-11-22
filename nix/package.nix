@@ -5,6 +5,9 @@
   bun,
   cacert,
   ffmpeg,
+  libgit2,
+  pkg-config,
+  sqlite,
   makeWrapper,
   writableTmpDirAsHomeHook,
 }:
@@ -109,9 +112,17 @@ rustPlatform.buildRustPackage {
     ];
   };
 
-  cargoHash = "sha256-eUQYLKKWjWSh7yKJgWfJ4daxDig4jsqgO+wavizGx5A=";
+  cargoHash = "sha256-/JCmRohIVzLbIh7Yc0FSYcdCZfo3A6p+h8ConFY+Pg4=";
 
-  nativeBuildInputs = [ makeWrapper ];
+  nativeBuildInputs = [
+    makeWrapper
+    pkg-config
+  ];
+
+  buildInputs = [
+    libgit2
+    sqlite
+  ];
 
   SSL_CERT_FILE = "${cacert}/etc/ssl/certs/ca-bundle.crt";
 
